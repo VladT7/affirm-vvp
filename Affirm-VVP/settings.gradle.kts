@@ -12,3 +12,6 @@ plugins {
 
 rootProject.name = "Affirm-VVP"
 include("app")
+include("api")
+include("shared")
+include("processing")
