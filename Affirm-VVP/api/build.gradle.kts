@@ -15,6 +15,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:3.0.3")
     testImplementation("io.ktor:ktor-server-tests:3.0.3")
     testImplementation(kotlin("test"))
+    implementation(project(":processing"))
+
 }
 
 tasks.test {

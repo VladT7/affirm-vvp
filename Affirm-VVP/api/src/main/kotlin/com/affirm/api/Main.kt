@@ -1,8 +1,6 @@
-//package com.affirm.api TODO figure this out
-
+package com.affirm.api
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
@@ -12,6 +10,11 @@ fun main() {
             get("/") {
                 call.respondText("Hello, World!")
             }
+                get("/process/{input}") {
+                    val input = call.parameters["input"] ?: "default"
+                    call.respondText(com.affirm.processing.processData(input))
+                }
+
         }
     }.start(wait = true)
 }
